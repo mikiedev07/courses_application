@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-bc!#p_ce=ib!1ox%ofkk$2%-ho)#so6a%*c_k)z69-jh_c)iut'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = False
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+ALLOWED_HOSTS = ['127.0.0.1', 'coursesmikie.herokuapp.com']
 
 
 # Application definition
@@ -81,12 +82,12 @@ WSGI_APPLICATION = 'courses.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dckt4e551upenh',
+        'USER': 'fzktmvvvlxjalh',
+        'PASSWORD': '135c351cb65a3e57ee90b0e9861b32b9610e5f43ef2b9b5161200cfe9117bb5b',
+        'HOST': 'ec2-52-19-188-149.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
